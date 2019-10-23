@@ -31,8 +31,8 @@ WebAssembly.instantiate(typedArray, {
 })
   .then(result => {
     const add = result.instance.exports._add;
-    global.add = add;
-    console.log(add(9, 9));
+    const sum = add(9, 9);
+    console.log(sum);
   })
   .catch(e => {
     // error caught
