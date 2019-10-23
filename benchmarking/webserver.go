@@ -15,7 +15,7 @@ var (
 
 func main() {
 	flag.Parse()
-	log.Printf("listening on %q...", *listen)
+	log.Printf("listening on %q for dir %q", *listen, *dir)
 	err := http.ListenAndServe(*listen, http.FileServer(http.Dir(*dir)))
 	log.Fatalln(err)
 }
