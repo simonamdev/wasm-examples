@@ -4,9 +4,9 @@
 // https://gist.github.com/kripken/59c67556dc03bb6d57052fedef1e61ab
 
 const fs = require('fs');
-var source = fs.readFileSync('./add.wasm');
+const source = fs.readFileSync('./add.wasm');
 
-var typedArray = new Uint8Array(source);
+const typedArray = new Uint8Array(source);
 
 const env = {
   abortStackOverflow: () => {
@@ -31,6 +31,7 @@ WebAssembly.instantiate(typedArray, {
 })
   .then(result => {
     const add = result.instance.exports._add;
+    global.add = add;
     console.log(add(9, 9));
   })
   .catch(e => {

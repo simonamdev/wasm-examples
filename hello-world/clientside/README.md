@@ -14,4 +14,4 @@ To run, simply run the following command:
 
 Then access the file `hello.html` at `http://localhost:8000`.
 
-If you are not on a Linx/Mac system, look into the Makefile to see the exact command that needs to be run.
+If you are not on a Linux/Mac system, look into the Makefile to see the exact command that needs to be run.
